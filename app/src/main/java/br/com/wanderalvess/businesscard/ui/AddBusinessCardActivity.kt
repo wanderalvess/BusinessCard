@@ -17,6 +17,7 @@ class AddBusinessCardActivity : AppCompatActivity() {
         MainViewModelFactory((application as App).repository)
     }
 
+    // ponto inicial do app
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -24,10 +25,12 @@ class AddBusinessCardActivity : AppCompatActivity() {
     }
 
     private fun insertListerners() {
+        //Aqui o botão fechar volta para tela inicial
         binding.closeBtn.setOnClickListener {
             finish()
         }
 
+        //aqui o botão cadastrar salvar os texto inseridos e volta para tela inicial
         binding.registerBtn.setOnClickListener {
             val businessCard = BusinessCard(
                 name = binding.nameTil.editText?.text.toString(),
@@ -41,7 +44,4 @@ class AddBusinessCardActivity : AppCompatActivity() {
             finish()
         }
     }
-
-
-
 }

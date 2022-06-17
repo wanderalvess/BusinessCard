@@ -13,7 +13,7 @@ import br.com.wanderalvess.businesscard.databinding.ItemBusinesCardBinding
 class BusinessCardAdapter :
     ListAdapter<BusinessCard, BusinessCardAdapter.ViewHolder>(DiffCallback()) {
 
-    var  listenerShare: (View) -> Unit = {}
+    var listenerShare: (View) -> Unit = {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -39,8 +39,6 @@ class BusinessCardAdapter :
             }
         }
     }
-
-
 }
 
 class DiffCallback: DiffUtil.ItemCallback<BusinessCard>() {
